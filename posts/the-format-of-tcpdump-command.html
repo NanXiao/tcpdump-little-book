@@ -1,0 +1,778 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>The format of tcpdump command · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="show-help-and-version-info.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="the-format-of-tcpdump-command.html">
+            
+                <a href="the-format-of-tcpdump-command.html">
+            
+                    
+                    The format of tcpdump command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="show-help-and-version-info.html">
+            
+                <a href="show-help-and-version-info.html">
+            
+                    
+                    Show help & version info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="print-less-protocol-information.html">
+            
+                <a href="print-less-protocol-information.html">
+            
+                    
+                    Print less protocol information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="print-verbose-output.html">
+            
+                <a href="print-verbose-output.html">
+            
+                    
+                    Print verbose output
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="specify-how-to-interpret-packet.html">
+            
+                <a href="specify-how-to-interpret-packet.html">
+            
+                    
+                    Specify how to interpret packet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="specify-network-interfaces.html">
+            
+                <a href="specify-network-interfaces.html">
+            
+                    
+                    Specify network interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="read-filter-expression-from-file.html">
+            
+                <a href="read-filter-expression-from-file.html">
+            
+                    
+                    Read filter expression from file
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="save-packets-into-file.html">
+            
+                <a href="save-packets-into-file.html">
+            
+                    
+                    Save packets into file
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="rotate-capture-files.html">
+            
+                <a href="rotate-capture-files.html">
+            
+                    
+                    Rotate capture files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="parse-and-print-packets.html">
+            
+                <a href="parse-and-print-packets.html">
+            
+                    
+                    Parse and print packets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="print-autonomous-system-number-in-asdot-notation.html">
+            
+                <a href="print-autonomous-system-number-in-asdot-notation.html">
+            
+                    
+                    Print Autonomous System Number in ASDOT notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="print-absolute-tcp-sequence-number.html">
+            
+                <a href="print-absolute-tcp-sequence-number.html">
+            
+                    
+                    Print absolute TCP sequence number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="set-capture-buffer-size.html">
+            
+                <a href="set-capture-buffer-size.html">
+            
+                    
+                    Set capture buffer size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="set-snapshot-length.html">
+            
+                <a href="set-snapshot-length.html">
+            
+                    
+                    Set snapshot length
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="capture-packets-for-specified-direction.html">
+            
+                <a href="capture-packets-for-specified-direction.html">
+            
+                    
+                    Capture packets for specified direction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="limit-capture-packet-count.html">
+            
+                <a href="limit-capture-packet-count.html">
+            
+                    
+                    Limit capture packet count
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="display-serial-number-for-every-capture-packet.html">
+            
+                <a href="display-serial-number-for-every-capture-packet.html">
+            
+                    
+                    Display serial number for every capture packet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="dump-compiled-bpf-program.html">
+            
+                <a href="dump-compiled-bpf-program.html">
+            
+                    
+                    Dump compiled BPF program
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="dont-optimize-bpf-program.html">
+            
+                <a href="dont-optimize-bpf-program.html">
+            
+                    
+                    Don't optimize BPF program
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="print-link-level-header.html">
+            
+                <a href="print-link-level-header.html">
+            
+                    
+                    Print link level header
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="list-and-set-data-link-type.html">
+            
+                <a href="list-and-set-data-link-type.html">
+            
+                    
+                    List and set data link type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="dont-convert-address-to-name.html">
+            
+                <a href="dont-convert-address-to-name.html">
+            
+                    
+                    Don't convert address to name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="dont-translate-foreign-ipv4-address.html">
+            
+                <a href="dont-translate-foreign-ipv4-address.html">
+            
+                    
+                    Don't translate foreign IPv4 address
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="dont-print-domain-name-qualification-of-host-names.html">
+            
+                <a href="dont-print-domain-name-qualification-of-host-names.html">
+            
+                    
+                    Don't print domain name qualification of host names
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="output-line-buffered-or-packet-buffered.html">
+            
+                <a href="output-line-buffered-or-packet-buffered.html">
+            
+                    
+                    Output line-buffered or packet-buffered
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="set-timestamp-type-and-precision-during-capture.html">
+            
+                <a href="set-timestamp-type-and-precision-during-capture.html">
+            
+                    
+                    Set timestamp type and precision during capture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="control-timestamp-display.html">
+            
+                <a href="control-timestamp-display.html">
+            
+                    
+                    Control timestamp display
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="set-monitor-mode-for-interface.html">
+            
+                <a href="set-monitor-mode-for-interface.html">
+            
+                    
+                    Set monitor mode for interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="capture-packets-in-immediate-mode.html">
+            
+                <a href="capture-packets-in-immediate-mode.html">
+            
+                    
+                    Capture packets in immediate mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="dont-verify-tcp-udp-or-ip-checksums.html">
+            
+                <a href="dont-verify-tcp-udp-or-ip-checksums.html">
+            
+                    
+                    Don't verify TCP, UDP or IP checksums
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="dont-put-the-interface-into-promiscuous-mode.html">
+            
+                <a href="dont-put-the-interface-into-promiscuous-mode.html">
+            
+                    
+                    Don't put the interface into promiscuous mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="relinquish-privileges-when-running-tcpdump.html">
+            
+                <a href="relinquish-privileges-when-running-tcpdump.html">
+            
+                    
+                    Relinquish privileges when running tcpdump
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="verify-cryptographic-signature-of-the-tcp-packet.html">
+            
+                <a href="verify-cryptographic-signature-of-the-tcp-packet.html">
+            
+                    
+                    Verify cryptographic signature of the TCP packet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="load-smi-mib-module.html">
+            
+                <a href="load-smi-mib-module.html">
+            
+                    
+                    Load SMI MIB module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="print-undecoded-nfs-handles.html">
+            
+                <a href="print-undecoded-nfs-handles.html">
+            
+                    
+                    Print undecoded NFS handles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="detect-802-11-s-mesh-header.html">
+            
+                <a href="detect-802-11-s-mesh-header.html">
+            
+                    
+                    Detect 802.11s mesh header
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="decrypt-ipsec-esp-packets.html">
+            
+                <a href="decrypt-ipsec-esp-packets.html">
+            
+                    
+                    Decrypt IPSec ESP packets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >The format of tcpdump command</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="the-format-of-tcpdump-command">The format of tcpdump command</h1>
+<p><code>Tcpdump</code>&apos;s format is like following:  </p>
+<pre><code># tcpdump [options] [expression]
+</code></pre><p><code>Tcpdump</code> only captures packets whose content satisfy <code>expression</code> (the format of <code>expression</code> is defined <a href="https://www.tcpdump.org/manpages/pcap-filter.7.html" target="_blank">here</a>). E.g., dump all <code>HTTP</code> protocol packets:   </p>
+<pre><code># tcpdump port 80
+14:59:05.989545 IP 192.168.35.211.53160 &gt; 172.217.194.138.http: Flags [S], seq 3145761683, win 29200, options [mss 1460,sackOK,TS val 4055365378 ecr 0,nop,wscale 7], length 0
+14:59:05.994196 IP 172.217.194.138.http &gt; 192.168.35.211.53160: Flags [S.], seq 1475154793, ack 3145761684, win 62392, options [mss 1430,sackOK,TS val 3581048241 ecr 4055365378,nop,wscale 8], length 0
+14:59:05.994235 IP 192.168.35.211.53160 &gt; 172.217.194.138.http: Flags [.], ack 1, win 229, options [nop,nop,TS val 4055365383 ecr 3581048241], length 0
+......
+^C
+32 packets captured
+36 packets received by filter
+4 packets dropped by kernel
+</code></pre><p>For every packet, the format is timestamp since midnight followed by packet information. In previous example, the first packet is an <code>IP</code> protocol message: protocol, source address, destination address and <code>TCP SYN</code> parameters:  </p>
+<pre><code>......
+14:59:05.989545 IP 192.168.35.211.53160 &gt; 172.217.194.138.http: Flags [S], seq 3145761683, win 29200, options [mss 1460,sackOK,TS val 4055365378 ecr 0,nop,wscale 7], length 0
+......
+</code></pre><p>After inputting &quot;<code>Ctrl+C</code>&quot; to terminate the <code>tcpdump</code> process, it also showed statistics of packets:  </p>
+<pre><code>......
+32 packets captured
+36 packets received by filter
+4 packets dropped by kernel
+</code></pre><p>This info is printed by <a href="https://github.com/the-tcpdump-group/tcpdump/blob/65969779d7bfc916dbedc32fbcc8dbb49a4a19de/tcpdump.c#L2637" target="_blank">info</a> function:  </p>
+<pre><code>static void
+info(int verbose)
+{
+    struct pcap_stat stats;
+
+    /*
+     * Older versions of libpcap didn&apos;t set ps_ifdrop on some
+     * platforms; initialize it to 0 to handle that.
+     */
+    stats.ps_ifdrop = 0;
+    if (pcap_stats(pd, &amp;stats) &lt; 0) {
+        (void)fprintf(stderr, &quot;pcap_stats: %s\n&quot;, pcap_geterr(pd));
+        infoprint = 0;
+        return;
+    }
+
+    if (!verbose)
+        fprintf(stderr, &quot;%s: &quot;, program_name);
+
+    (void)fprintf(stderr, &quot;%u packet%s captured&quot;, packets_captured,
+        PLURAL_SUFFIX(packets_captured));
+    if (!verbose)
+        fputs(&quot;, &quot;, stderr);
+    else
+        putc(&apos;\n&apos;, stderr);
+    (void)fprintf(stderr, &quot;%u packet%s received by filter&quot;, stats.ps_recv,
+        PLURAL_SUFFIX(stats.ps_recv));
+    if (!verbose)
+        fputs(&quot;, &quot;, stderr);
+    else
+        putc(&apos;\n&apos;, stderr);
+    (void)fprintf(stderr, &quot;%u packet%s dropped by kernel&quot;, stats.ps_drop,
+        PLURAL_SUFFIX(stats.ps_drop));
+    if (stats.ps_ifdrop != 0) {
+        if (!verbose)
+            fputs(&quot;, &quot;, stderr);
+        else
+            putc(&apos;\n&apos;, stderr);
+        (void)fprintf(stderr, &quot;%u packet%s dropped by interface\n&quot;,
+            stats.ps_ifdrop, PLURAL_SUFFIX(stats.ps_ifdrop));
+    } else
+        putc(&apos;\n&apos;, stderr);
+    infoprint = 0;
+}
+</code></pre><p>&quot;packets captured&quot; records the packets received and processed by <code>tcpdump</code>. There are also &quot;packets received by filter&quot;, &quot;packets dropped by kernel&quot; and &quot;packets dropped by interface&quot; statistics. These items are fetched through <a href="https://www.tcpdump.org/manpages/pcap_stats.3pcap.html" target="_blank">pcap_stats</a> API and depend on the underlying Operating System, so I would not elaborate them here. </p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="show-help-and-version-info.html" class="navigation navigation-next " aria-label="Next page: Show help & version info">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"The format of tcpdump command","level":"1.2","depth":1,"next":{"title":"Show help & version info","level":"1.3","depth":1,"path":"posts/show-help-and-version-info.md","ref":"posts/show-help-and-version-info.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/the-format-of-tcpdump-command.md","mtime":"2019-06-21T07:01:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-21T08:11:49.531Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

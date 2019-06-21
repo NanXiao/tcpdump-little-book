@@ -1,0 +1,778 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Parse and print packets · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="print-autonomous-system-number-in-asdot-notation.html" />
+    
+    
+    <link rel="prev" href="rotate-capture-files.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="the-format-of-tcpdump-command.html">
+            
+                <a href="the-format-of-tcpdump-command.html">
+            
+                    
+                    The format of tcpdump command
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="show-help-and-version-info.html">
+            
+                <a href="show-help-and-version-info.html">
+            
+                    
+                    Show help & version info
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="print-less-protocol-information.html">
+            
+                <a href="print-less-protocol-information.html">
+            
+                    
+                    Print less protocol information
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="print-verbose-output.html">
+            
+                <a href="print-verbose-output.html">
+            
+                    
+                    Print verbose output
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="specify-how-to-interpret-packet.html">
+            
+                <a href="specify-how-to-interpret-packet.html">
+            
+                    
+                    Specify how to interpret packet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="specify-network-interfaces.html">
+            
+                <a href="specify-network-interfaces.html">
+            
+                    
+                    Specify network interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="read-filter-expression-from-file.html">
+            
+                <a href="read-filter-expression-from-file.html">
+            
+                    
+                    Read filter expression from file
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="save-packets-into-file.html">
+            
+                <a href="save-packets-into-file.html">
+            
+                    
+                    Save packets into file
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="rotate-capture-files.html">
+            
+                <a href="rotate-capture-files.html">
+            
+                    
+                    Rotate capture files
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="parse-and-print-packets.html">
+            
+                <a href="parse-and-print-packets.html">
+            
+                    
+                    Parse and print packets
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="print-autonomous-system-number-in-asdot-notation.html">
+            
+                <a href="print-autonomous-system-number-in-asdot-notation.html">
+            
+                    
+                    Print Autonomous System Number in ASDOT notation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="print-absolute-tcp-sequence-number.html">
+            
+                <a href="print-absolute-tcp-sequence-number.html">
+            
+                    
+                    Print absolute TCP sequence number
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="set-capture-buffer-size.html">
+            
+                <a href="set-capture-buffer-size.html">
+            
+                    
+                    Set capture buffer size
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="set-snapshot-length.html">
+            
+                <a href="set-snapshot-length.html">
+            
+                    
+                    Set snapshot length
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="capture-packets-for-specified-direction.html">
+            
+                <a href="capture-packets-for-specified-direction.html">
+            
+                    
+                    Capture packets for specified direction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="limit-capture-packet-count.html">
+            
+                <a href="limit-capture-packet-count.html">
+            
+                    
+                    Limit capture packet count
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="display-serial-number-for-every-capture-packet.html">
+            
+                <a href="display-serial-number-for-every-capture-packet.html">
+            
+                    
+                    Display serial number for every capture packet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="dump-compiled-bpf-program.html">
+            
+                <a href="dump-compiled-bpf-program.html">
+            
+                    
+                    Dump compiled BPF program
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="dont-optimize-bpf-program.html">
+            
+                <a href="dont-optimize-bpf-program.html">
+            
+                    
+                    Don't optimize BPF program
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="print-link-level-header.html">
+            
+                <a href="print-link-level-header.html">
+            
+                    
+                    Print link level header
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.22" data-path="list-and-set-data-link-type.html">
+            
+                <a href="list-and-set-data-link-type.html">
+            
+                    
+                    List and set data link type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="dont-convert-address-to-name.html">
+            
+                <a href="dont-convert-address-to-name.html">
+            
+                    
+                    Don't convert address to name
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.24" data-path="dont-translate-foreign-ipv4-address.html">
+            
+                <a href="dont-translate-foreign-ipv4-address.html">
+            
+                    
+                    Don't translate foreign IPv4 address
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.25" data-path="dont-print-domain-name-qualification-of-host-names.html">
+            
+                <a href="dont-print-domain-name-qualification-of-host-names.html">
+            
+                    
+                    Don't print domain name qualification of host names
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.26" data-path="output-line-buffered-or-packet-buffered.html">
+            
+                <a href="output-line-buffered-or-packet-buffered.html">
+            
+                    
+                    Output line-buffered or packet-buffered
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.27" data-path="set-timestamp-type-and-precision-during-capture.html">
+            
+                <a href="set-timestamp-type-and-precision-during-capture.html">
+            
+                    
+                    Set timestamp type and precision during capture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.28" data-path="control-timestamp-display.html">
+            
+                <a href="control-timestamp-display.html">
+            
+                    
+                    Control timestamp display
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.29" data-path="set-monitor-mode-for-interface.html">
+            
+                <a href="set-monitor-mode-for-interface.html">
+            
+                    
+                    Set monitor mode for interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.30" data-path="capture-packets-in-immediate-mode.html">
+            
+                <a href="capture-packets-in-immediate-mode.html">
+            
+                    
+                    Capture packets in immediate mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.31" data-path="dont-verify-tcp-udp-or-ip-checksums.html">
+            
+                <a href="dont-verify-tcp-udp-or-ip-checksums.html">
+            
+                    
+                    Don't verify TCP, UDP or IP checksums
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.32" data-path="dont-put-the-interface-into-promiscuous-mode.html">
+            
+                <a href="dont-put-the-interface-into-promiscuous-mode.html">
+            
+                    
+                    Don't put the interface into promiscuous mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.33" data-path="relinquish-privileges-when-running-tcpdump.html">
+            
+                <a href="relinquish-privileges-when-running-tcpdump.html">
+            
+                    
+                    Relinquish privileges when running tcpdump
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.34" data-path="verify-cryptographic-signature-of-the-tcp-packet.html">
+            
+                <a href="verify-cryptographic-signature-of-the-tcp-packet.html">
+            
+                    
+                    Verify cryptographic signature of the TCP packet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.35" data-path="load-smi-mib-module.html">
+            
+                <a href="load-smi-mib-module.html">
+            
+                    
+                    Load SMI MIB module
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.36" data-path="print-undecoded-nfs-handles.html">
+            
+                <a href="print-undecoded-nfs-handles.html">
+            
+                    
+                    Print undecoded NFS handles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.37" data-path="detect-802-11-s-mesh-header.html">
+            
+                <a href="detect-802-11-s-mesh-header.html">
+            
+                    
+                    Detect 802.11s mesh header
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.38" data-path="decrypt-ipsec-esp-packets.html">
+            
+                <a href="decrypt-ipsec-esp-packets.html">
+            
+                    
+                    Decrypt IPSec ESP packets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Parse and print packets</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="parse-and-print-packets">Parse and print packets</h1>
+<p><code>-A</code> option can be used to print packets in <code>ASCII</code> format. E.g., show contents of web pages:  </p>
+<pre><code># tcpdump -A port 80
+......
+15:37:32.623887 IP sin10s02-in-f14.1e100.net.http &gt; archlinux.40742: Flags [.], ack 138, win 240, options [nop,nop,TS val 1699492976 ecr 4020616092], length 0
+E..4.%..x......N
+....P.&amp;..6.b*;............
+eL4p....
+15:37:32.628640 IP sin10s02-in-f14.1e100.net.http &gt; archlinux.40742: Flags [P.], seq 1:529, ack 138, win 240, options [nop,nop,TS val 1699492981 ecr 4020616092], length 528: HTTP: HTTP/1.1 301 Moved Permanently
+E..D.&apos;..x......N
+....P.&amp;..6.b*;.....h......
+eL4u....HTTP/1.1 301 Moved Permanently
+Location: http://www.google.com/
+Content-Type: text/html; charset=UTF-8
+Date: Fri, 03 May 2019 07:37:32 GMT
+Expires: Sun, 02 Jun 2019 07:37:32 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 219
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+
+&lt;HTML&gt;&lt;HEAD&gt;&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot;&gt;
+&lt;TITLE&gt;301 Moved&lt;/TITLE&gt;&lt;/HEAD&gt;&lt;BODY&gt;
+&lt;H1&gt;301 Moved&lt;/H1&gt;
+The document has moved
+&lt;A HREF=&quot;http://www.google.com/&quot;&gt;here&lt;/A&gt;.
+&lt;/BODY&gt;&lt;/HTML&gt;
+......
+</code></pre><p>There is also a group of &quot;<code>-x/-xx/-X/-XX</code>&quot; options to parse and print packets:  </p>
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Meaning</th>
+    <th>Example</th> 
+  </tr>
+  <tr>
+    <td>-x</td>
+    <td>Print the data of each packet (minus its link level header) in hex.</td>
+    <td>12:58:03.592155 IP 192.168.35.211.ssh &gt; 10.217.133.114.54092: Flags [P.], seq 260:296, ack 1, win 317, length 36<br>
+        0x0000:  4548 004c 6b56 4000 4006 5a47 c0a8 23d3<br>
+        0x0010:  0ad9 8572 0016 d34c 4251 850d 7a7c d8b4<br>
+        ......</td>
+   </tr>
+   <tr>
+    <td>-xx</td>
+    <td>Print the data of each packet, including its link level header, in hex.</td>
+    <td>13:16:30.839337 IP 192.168.35.211.ssh &gt; 10.217.133.114.54092: Flags [P.], seq 260:296, ack 1, win 317, length 36<br>
+        0x0000:  001e bdde 5f00 0800 2770 9e7a 0800 4548<br>
+        0x0010:  004c 6ba0 4000 4006 59fd c0a8 23d3 0ad9<br>
+        ......</td>
+  </tr>
+  <tr>
+    <td>-X</td>
+    <td>Print the data of each packet (minus its link level header) in hex and ASCII.</td>
+    <td>13:19:13.539666 IP 192.168.35.211.ssh &gt; 10.217.133.114.54092: Flags [P.], seq 1114673977:1114674085, ack 2055006128, win 317, length 108<br>
+        0x0000:  4548 0094 744c 4000 4006 5109 c0a8 23d3  EH..tL@.@.Q...#.<br>
+        0x0010:  0ad9 8572 0016 d34c 4270 9339 7a7c e7b0  ...r...LBp.9z|..<br>
+        ......</td>
+   </tr>
+   <tr>
+    <td>-XX</td>
+    <td>Print the data of each packet, including its link level header, in hex and ASCII.</td>
+    <td>13:22:22.536935 IP 192.168.35.211.ssh &gt; 10.217.133.114.54092: Flags [P.], seq 1114682321:1114682429, ack 2055007124, win 317, length 108<br>
+        0x0000:  001e bdde 5f00 0800 2770 9e7a 0800 4548  ...._...&apos;p.z..EH<br>
+        0x0010:  0094 7480 4000 4006 50d5 c0a8 23d3 0ad9  ..t.@.@.P...#...<br>
+    ......</td>
+  </tr>
+</table>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="rotate-capture-files.html" class="navigation navigation-prev " aria-label="Previous page: Rotate capture files">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="print-autonomous-system-number-in-asdot-notation.html" class="navigation navigation-next " aria-label="Next page: Print Autonomous System Number in ASDOT notation">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Parse and print packets","level":"1.11","depth":1,"next":{"title":"Print Autonomous System Number in ASDOT notation","level":"1.12","depth":1,"path":"posts/print-autonomous-system-number-in-asdot-notation.md","ref":"posts/print-autonomous-system-number-in-asdot-notation.md","articles":[]},"previous":{"title":"Rotate capture files","level":"1.10","depth":1,"path":"posts/rotate-capture-files.md","ref":"posts/rotate-capture-files.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"posts/parse-and-print-packets.md","mtime":"2019-06-21T05:23:40.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-21T08:11:49.531Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

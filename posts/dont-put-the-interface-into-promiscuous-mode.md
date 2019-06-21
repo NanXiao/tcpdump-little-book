@@ -1,0 +1,3 @@
+# Don't put the interface into promiscuous mode
+
+"`-p/--no-promiscuous-mode`" option tells `tcpdump` not put the interface into promiscuous mode. `tcpdump` attains this purpose through either setting `promisc` argument to `0` in [pcap_open_live](https://www.tcpdump.org/manpages/pcap_open_live.3pcap.html) function or calling [pcap_set_promisc](https://www.tcpdump.org/manpages/pcap_set_promisc.3pcap.html) API.
