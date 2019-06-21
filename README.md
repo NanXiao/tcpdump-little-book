@@ -1,6 +1,6 @@
 # Tcpdump little book
 
-[Tcpdump](https://www.tcpdump.org/) is a powerful command line tool to analyze network packets on `Unix-like` Operating Systems; it is indispensable for debugging network related issues. Run `tcpdump` in your terminal:  
+[Tcpdump](https://www.tcpdump.org/) is a very powerful command line tool to analyze network packets on `Unix-like` Operating Systems; it is indispensable for debugging network related issues. Run `tcpdump` in your terminal:  
 
 	# tcpdump
 	tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
