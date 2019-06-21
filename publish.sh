@@ -1,7 +1,7 @@
 # install the plugins and build the static site
 gitbook install && gitbook build
 
-# checkout to the gh-pages branch
+# checkout to the master branch
 git checkout master
 
 # pull the latest updates
@@ -22,6 +22,3 @@ git commit -a -m "Update docs"
 
 # push to the origin
 git push origin master
-
-# checkout to the master branch
-git checkout master
